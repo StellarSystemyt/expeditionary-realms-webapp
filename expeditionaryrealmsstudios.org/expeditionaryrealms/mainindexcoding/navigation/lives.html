@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lives</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    body {
+      background-color: #171614;
+      background-image: url('../../assets/background-image.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #fff;
+    }
+
+    h2 {
+      color: #fe1a09;
+      text-align: center;
+    }
+
+    #content img {
+      width: 150px;
+      height: auto;
+      border-radius: 50px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      background-color: #222;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin: 0 10px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 5px 10px;
+    }
+
+    nav ul li a:hover {
+      border-radius: 5px;
+      color: #00ff00;
+    }
+
+    .links-container {
+      margin: 20px auto;
+      max-width: 800px;
+      padding: 20px;
+      background: rgba(34, 34, 34, 0.9);
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .links-container h1 {
+      font-size: 24px;
+      text-align: center;
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+
+    .links-container ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .links-container li {
+      margin: 10px 0;
+    }
+
+    .links-container a {
+      color: #87CEEB;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .links-container a:hover {
+      color: #5aa300;
+      text-decoration: underline;
+    }
+
+    #twitch-embed,
+    #twitch-embed-2 {
+      width: 100%;
+      height: 80vh;
+      min-height: 400px;
+      margin-bottom: 30px;
+    }
+
+    .container {
+      padding: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      margin: 20px 0;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #0077cc;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+  <script src="https://player.twitch.tv/js/embed/v1.js"></script>
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <header>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="socials.html">Socials</a></li>
+        <li><a href="lives.html">Lives</a></li>
+        <li><a href="modpack_files.html">Modpack Files</a></li>
+        <li><a href="Meet_The_Team.html">Meet The Team</a></li>
+        <li><a href="Hours_Of_Operations.html">Hours Of Operations</a></li>
+        <li><a href="announcements.html">Announcements</a></li>
+        <!--<li><a href="chat_forum.html">Chat Forum</a></li>-->
+        <li><a href="Public_Code_Page.html">Public Code</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Twitch Embeds -->
+  <div class="container">
+    <div id="twitch-embed"></div>
+    <div id="twitch-embed-2"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2024-current Expeditionary Realms Studios | All rights reserved. | <a href="https://stellar.brookemahoney.com">Chatbot</a></p>
+  </footer>
+
+  <!-- Twitch Embed Scripts -->
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+      try {
+        new Twitch.Player("twitch-embed", {
+          width: "100%",
+          height: "100%",
+          channel: "TheModpackCurator",
+          parent: ["expeditionaryrealms.com", "localhost", "127.0.0.1"]
+        }).setVolume(0.5);
+
+        new Twitch.Player("twitch-embed-2", {
+          width: "100%",
+          height: "100%",
+          channel: "HarlequinPet",
+          parent: ["expeditionaryrealms.com", "localhost", "127.0.0.1"]
+        }).setVolume(0.5);
+      } catch (e) {
+        console.error("Twitch Embed Error:", e);
+      }
+    });
+  </script>
+</body>
+</html>
